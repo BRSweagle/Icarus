@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building..'
-        git(url: 'https://github.com/BRSweagle/Icarus', poll: true)
+        git(url: 'https://github.com/BRSweagle/Icarus', poll: true, branch: 'main')
       }
     }
 
