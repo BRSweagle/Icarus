@@ -1,0 +1,4 @@
+tokenservice-V1:
+        expiration: '300'
+        name: /opt/eldor/certs/operationalToken.jks
+        password: ...
