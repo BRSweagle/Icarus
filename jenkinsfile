@@ -9,34 +9,6 @@ pipeline {
           }
         }
 
-        stage('CodePush') {
-          steps {
-            echo 'Code changes'
-          }
-        }
-
-      }
-    }
-
-    stage('Testing') {
-      parallel {
-        stage('Testing') {
-          steps {
-            sleep(time: 2, unit: 'SECONDS')
-            echo 'Testing Started'
-          }
-        }
-
-        stage('Performance') {
-          steps {
-            echo 'Environments being provisioned'
-            echo 'Complete.'
-          }
-        }
-
-      }
-    }
-
     stage('Config') {
       parallel {
         stage('Config') {
@@ -63,4 +35,7 @@ pipeline {
     }
 
   }
+}
+}
+}
 }
