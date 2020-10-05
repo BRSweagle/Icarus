@@ -11,7 +11,7 @@ pipeline {
 
         stage('CodePush') {
           steps {
-            echo 'Code changes merged'
+            echo 'Code changes'
           }
         }
 
