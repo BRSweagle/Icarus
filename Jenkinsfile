@@ -1,12 +1,13 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building..'
-        git(url: 'https://github.com/BRSweagle/Icarus', poll: true, branch: 'main')
-      }
-    }
+        agent any
+        stages {
+             stage('Retrieve Sources') {
+                  steps {
+             echo workspace
+             git url: 'https://github.com/BRSweagle/Icarus'
+             sh "ls -la"
+        }}
+
 
     stage('Config') {
       steps {
