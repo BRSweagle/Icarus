@@ -1,41 +1,21 @@
 pipeline {
-  agent any
-  stages {
-    stage('Git') {
-      parallel {
-        stage('Git') {
-          steps {
-            git(url: 'https://github.com/BRSweagle/Icarus', poll: true)
-          }
-        }
+    agent any
 
-    stage('Config') {
-      parallel {
-        stage('Config') {
-          steps {
-            SWEAGLEUpload(actionName: 'uploadConfig', fileLocation: '/Components/Files', format: 'properties', nodePath: 'Icarus,Components,Files', subDirectories: true, tag: '${BUILD_ID)', autoRecognize: true, withSnapshot: false)
-          }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
         }
-
-    stage('Deployment') {
-      parallel {
-        stage('Deployment') {
-          steps {
-            echo 'Push to TST'
-          }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-
-        stage('TestEnv1') {
-          steps {
-            echo 'Deployed'
-          }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
         }
-
-      }
     }
-
-  }
-}
-}
-}
 }
