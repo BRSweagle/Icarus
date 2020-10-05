@@ -10,7 +10,9 @@ pipeline {
 
     stage('Config') {
       steps {
-        SWEAGLEUpload(actionName: 'uploadConfig', fileLocation: 'Components/Files/*.properties', format: 'properties', nodePath: 'Icarus,Components,Files', tag: '${BUILD_ID)', withSnapshot: true)
+        SWEAGLEUpload(actionName: 'uploadProps', fileLocation: 'Components/Files/*.properties', format: 'properties', nodePath: 'Icarus,Components,Files', showResults: true, withSnapshot: true, tag: '${BUILD_ID}')
+        SWEAGLEUpload(actionName: 'uploadJSON', fileLocation: 'Components/Microservices/*.json', format: 'JSON', nodePath: 'Icarus,Components,Microservices', filenameNodes: true, withSnapshot: true, tag: '${BUILD_ID}')
+        SWEAGLEUpload(actionName: 'uploadYAML', fileLocation: 'Components/Microservices/*.yaml', format: 'yaml', nodePath: 'Icarus,Components,Microservices', filenameNodes: true, withSnapshot: true, tag: '${BUILD_ID}')
       }
     }
 
