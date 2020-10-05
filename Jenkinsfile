@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Config') {
               steps {
-                SWEAGLEUpload(actionName: 'uploadConfig', fileLocation: 'Components,Files', format: 'properties', nodePath: 'Icarus,Components,Files', subDirectories: false, tag: '${BUILD_ID)', autoRecognize: false, withSnapshot: true)
+                SWEAGLEUpload(actionName: 'uploadConfig', fileLocation: 'Components/Files', format: 'properties', nodePath: 'Icarus,Components,Files', subDirectories: false, tag: '${BUILD_ID)', autoRecognize: false, withSnapshot: true)
             }
         }
         stage('Test') {
