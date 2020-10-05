@@ -20,7 +20,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing..'
-        SWEAGLEValidate(actionName: 'Validate Tst-1', mdsName: 'Icarus.Tst-1', markFailed: true, warnMax: -1, noPending: true, stored: true, showResults: true)
+        SWEAGLEValidate(actionName: 'Validate Tst-1', mdsName: 'Icarus.Tst-1', markFailed: true, warnMax: -1, noPending: true, stored: true, showResults: false)
       }
     }
 
