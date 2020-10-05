@@ -13,7 +13,7 @@ pipeline {
               steps {
                 SWEAGLEUpload(actionName: 'uploadConfig', fileLocation: '/Components/Files', format: 'properties', nodePath: 'Icarus,Components,Files', subDirectories: true, tag: '${BUILD_ID)', autoRecognize: true, withSnapshot: false)
             }
-
+        }    
         stage('Test') {
             steps {
                 echo 'Testing..'
