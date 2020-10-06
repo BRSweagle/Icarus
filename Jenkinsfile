@@ -6,9 +6,6 @@ pipeline {
         echo workspace
         git(branch: 'main', url: 'https://github.com/BRSweagle/Icarus')
       }
-      triggers {
-    pollSCM('* * * * *')
-}
 }
     stage('Config') {
       steps {
