@@ -5,8 +5,10 @@ pipeline {
       steps {
         echo workspace
         git(branch: 'main', url: 'https://github.com/BRSweagle/Icarus')
-        poll: true
       }
+      triggers {
+    // poll repo every 2 minute for changes
+    pollSCM('* * * * *')
     }
 
     stage('Config') {
