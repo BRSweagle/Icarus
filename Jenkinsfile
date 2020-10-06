@@ -5,6 +5,7 @@ pipeline {
       steps {
         echo workspace
         git(branch: 'main', url: 'https://github.com/BRSweagle/Icarus')
+        poll: true
       }
     }
 
