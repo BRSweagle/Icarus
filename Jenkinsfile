@@ -7,10 +7,9 @@ pipeline {
         git(branch: 'main', url: 'https://github.com/BRSweagle/Icarus')
       }
       triggers {
-    // poll repo every 2 minute for changes
-    pollSCM('* * * * *')
+    poll ('* * * * *')
     }
-
+}
     stage('Config') {
       steps {
         SWEAGLEUpload(actionName: 'uploadProp', fileLocation: 'Components/Files/*.properties', format: 'properties', nodePath: 'Icarus', filenameNodes: true, withSnapshot: true, tag: '${BUILD_ID}')
